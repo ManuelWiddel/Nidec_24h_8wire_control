@@ -82,22 +82,9 @@ A position PID configuration is present in the source (`Kp = 0.01f`, `Ki = 0.0f`
 | `beta` | `0.05f` |
 | Update interval | `0.01f` s |
 
-These values are source-code defaults and may need adjustment for a different motor, encoder, driver, or mechanical setup.
 
 ## Build and flash
 
 This repository's application source is written for an STM32 project using the STM32 HAL. Open the project with the STM32-compatible build environment used to create its project files (commonly STM32CubeIDE), select the matching target configuration, build, and flash the resulting firmware.
 
 The complete project must include the relevant STM32 startup/system files, HAL drivers, generated peripheral configuration, linker configuration, and the project-specific encoder, motor, PID, and visualizer modules. Those files are not described or reproduced by this README.
-
-## Hardware and safety notes
-
-- Connect the motor driver, encoder, and MCU pins according to the board configuration and wiring used by your project.
-- Verify PWM polarity, motor direction, encoder scaling, timer clocks, and current limits before running the motor.
-- Start with conservative controller gains and a mechanically safe test setup.
-- Ensure the motor driver has appropriate current limiting and an accessible emergency stop.
-- Do not assume the example parameter values are suitable for other hardware.
-
-## License
-
-The source file contains the STM32-generated STMicroelectronics license notice and refers to a `LICENSE` file in the project root. Check the repository's `LICENSE` file for the terms that apply to the complete project.
